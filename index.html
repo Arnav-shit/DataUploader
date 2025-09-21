@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropSense Data Uploader</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <main class="flex-grow flex items-center justify-center py-16 px-4">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-green-200 max-w-2xl w-full text-center">
+            <h1 class="text-3xl font-bold text-green-700 mb-4">Data Uploader</h1>
+            <p class="text-gray-600 mb-8">Upload images and sensor data to contribute to the CropSense AI model.</p>
+            
+            <form id="upload-form" class="space-y-6">
+                <div>
+                    <label for="image-upload" class="block text-lg font-medium text-gray-700 mb-2">
+                        Upload Crop Image
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" class="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-green-50 file:text-green-700
+                        hover:file:bg-green-100">
+                </div>
+                
+                <div id="image-preview-container" class="mt-4 hidden">
+                    <img id="image-preview" src="#" alt="Image Preview" class="w-full h-auto rounded-lg shadow-inner border border-gray-300">
+                </div>
+
+                <div>
+                    <label for="sensor-data" class="block text-lg font-medium text-gray-700 mb-2">
+                        Simulated Hyperspectral Data
+                    </label>
+                    <textarea id="sensor-data" rows="4" class="w-full rounded-lg border-2 border-green-300 p-3 text-gray-700 focus:outline-none focus:border-green-500 transition-colors" placeholder="e.g., {'ndvi': 0.85, 'chlorophyll': 72, 'moisture': 45}"></textarea>
+                </div>
+                
+                <button type="submit" id="save-button" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-full button-glow disabled:opacity-50 disabled:cursor-not-allowed">
+                    Save to Database
+                </button>
+            </form>
+
+            <div id="status-message" class="mt-6 text-sm font-medium"></div>
+
+            <!-- Display User ID to allow for collaboration -->
+            <div id="user-info" class="mt-8 p-4 bg-gray-100 rounded-lg text-left text-sm text-gray-500">
+                <p><strong>Your User ID:</strong> <span id="user-id">Loading...</span></p>
+                <p>This ID is used to manage your uploaded data.</p>
+            </div>
+            
+            <a href="index.html" class="inline-block mt-8 text-green-700 hover:text-green-500 transition-colors">
+                &larr; Back to Home
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-6 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 CropSense. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

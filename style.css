@@ -1,0 +1,30 @@
+  body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fbf8;
+            color: #1e4029;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e4029;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38a169;
+        }
+
+        .button-glow {
+            box-shadow: 0 4px 6px rgba(52, 211, 153, 0.4), 0 1px 3px rgba(52, 211, 153, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .button-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 10px rgba(52, 211, 153, 0.6), 0 3px 6px rgba(52, 211, 153, 0.3);
+        }
